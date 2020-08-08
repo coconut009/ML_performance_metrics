@@ -1,4 +1,5 @@
 import numpy as np
+from time import time
 import pandas as pd
 from sklearn.model_selection import train_test_split, KFold
 from sklearn import preprocessing
@@ -41,13 +42,16 @@ for i in range (2,7):
         x_train, x_test = attributes[train_index], attributes[test_index]
         y_train, y_test = label[train_index], label[test_index]
 #print("train set size: %d,test set size: %d" %(len(x_train),len(x_test)))
-    
+        t0 = time()
         counter=counter+1
         Ada_clf = Adaboost(n_clf=5)
-        Ada_clf.fit(x_train, y_train)
+        Ada_clf.fit(x_train, y_train)  
+        t1 = time()
         Ada_prediction = Ada_clf.predict(x_test)
-            
+         
+        
         Ada_acc = accuracy(y_test, Ada_prediction)
             
         print ("At %d number of fold with the Accuracy: %f" %(counter,Ada_acc))
+    print("The training time is %f ms" % ((t1 - t0)*1000))
             
