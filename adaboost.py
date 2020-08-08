@@ -22,7 +22,7 @@ class DecisionStump():
 
 class Adaboost():
 
-    def __init__(self, n_clf=5):
+    def __init__(self, n_clf):
         self.n_clf = n_clf
 
     def fit(self, X, y):
