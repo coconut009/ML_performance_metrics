@@ -1,7 +1,7 @@
 import numpy as np
 from time import time
 import pandas as pd
-from sklearn.model_selection import train_test_split, KFold
+from sklearn.model_selection import  KFold
 from sklearn import preprocessing
 from adaboost import Adaboost
 
@@ -38,20 +38,20 @@ for i in range (2,7):
     counter =0 
     print("When the number of spilt is", i)
     for train_index, test_index in kf.split(attributes): 
-#print("TRAIN:", train_index, "TEST:", test_index)
+        t0 = time()
         x_train, x_test = attributes[train_index], attributes[test_index]
         y_train, y_test = label[train_index], label[test_index]
-#print("train set size: %d,test set size: %d" %(len(x_train),len(x_test)))
-        t0 = time()
+        t1 = time()
         counter=counter+1
         Ada_clf = Adaboost(n_clf=5)
         Ada_clf.fit(x_train, y_train)  
-        t1 = time()
+        t2 = time()
         Ada_prediction = Ada_clf.predict(x_test)
-         
+        t3 = time()
         
         Ada_acc = accuracy(y_test, Ada_prediction)
             
-        print ("At %d number of fold with the Accuracy: %f" %(counter,Ada_acc))
-    print("The training time is %f ms" % ((t1 - t0)*1000))
+        print ("At %d number of fold, the accuracy of adaboost classifier: %f" %(counter,Ada_acc))
+    print("The Adaboost training time is %f ms" % ((t2 - t1)*1000))
+    print("The total computation time is %f ms" % ((t3 - t0)*1000))
             
