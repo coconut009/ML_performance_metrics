@@ -10,7 +10,8 @@ def accuracy(true_label, prediction):
     return accuracy 
     
 ## file location is subject to change
-data_set    =  pd.read_csv(r'/home/aaron/Desktop/car.data',header=0)
+data_set    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
+#data_set    =  pd.read_csv(r'/home/aaron/Desktop/car.data',header=0)
 #print (data_set.head())
 
 # header info (reference)
@@ -29,22 +30,24 @@ target_label = le.fit_transform(list(data_set["target_label"]))
 label      =   np.array(target_label)
 attributes =   np.array(list(zip(buying,maint,door,persons,lug_boot,safety)))
 
+for i in range (2,7):
+    
 # cross validation using k fold from sklearn
-kf = KFold(n_splits=5,shuffle=True)
-counter =0 
-for train_index, test_index in kf.split(attributes): 
-    #print("TRAIN:", train_index, "TEST:", test_index)
-    x_train, x_test = attributes[train_index], attributes[test_index]
-    y_train, y_test = label[train_index], label[test_index]
-    #print("train set size: %d,test set size: %d" %(len(x_train),len(x_test)))
- # change the number of stump of the adaboost, and onserve
-    counter=counter+1
-    for i in range (10):
-        Ada_clf = Adaboost(n_clf=i+1)
+    kf = KFold(n_splits=i,shuffle=True)
+    counter =0 
+    print("When the number of spilt is", i)
+    for train_index, test_index in kf.split(attributes): 
+#print("TRAIN:", train_index, "TEST:", test_index)
+        x_train, x_test = attributes[train_index], attributes[test_index]
+        y_train, y_test = label[train_index], label[test_index]
+#print("train set size: %d,test set size: %d" %(len(x_train),len(x_test)))
+    
+        counter=counter+1
+        Ada_clf = Adaboost(n_clf=5)
         Ada_clf.fit(x_train, y_train)
         Ada_prediction = Ada_clf.predict(x_test)
-        
+            
         Ada_acc = accuracy(y_test, Ada_prediction)
-        
-        print ("At %d number of fold with the %d of stump, Accuracy: %f" %(counter, i+1,Ada_acc))
-        
+            
+        print ("At %d number of fold with the Accuracy: %f" %(counter,Ada_acc))
+            
