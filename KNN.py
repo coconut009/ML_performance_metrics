@@ -41,7 +41,7 @@ for i in range (2,7):
     train_index = label_1.shape[0] - test_index
     train_t_avg = 0
     total_t_avg = 0
-    print("\n\nData Set 1 with the number of spilt is", i, "( Training:",train_index,"Testing:",test_index,")")
+    print("\nData Set 1 with the number of spilt is", i, "( Training:",train_index,"Testing:",test_index,")")
 
     x_1_train, x_1_test = attributes_1[0:train_index], attributes_1[train_index:label_1.shape[0]]
     y_1_train, y_1_test = label_1[0:train_index], label_1[train_index:label_1.shape[0]]
@@ -70,6 +70,7 @@ for i in range (2,7):
         Accuracy = (1-(TotalErrors) / test_index )*100
         print("\nIf k =", k, "==> Total Errors:", TotalErrors, "(Accuracy: %.2f%%), (Computation time: %.0f ms)" % (Accuracy,((t2-t1)*1000)))
         # print("The total computation time on data set 1 is %.0f ms\n" % ((t2-t1)*1000))
+    print("\n")
 
 
 
