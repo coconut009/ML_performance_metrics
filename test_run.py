@@ -5,6 +5,7 @@ from sklearn.model_selection import  KFold
 from sklearn import preprocessing
 from sklearn.tree import DecisionTreeClassifier
 from sklearn. ensemble import AdaBoostClassifier
+from sklearn.decomposition import PCA
 from sklearn.svm import SVC
 
 # define the accuracy calculation function
@@ -58,8 +59,17 @@ for i in range (2,7):
         counter=counter+1
         Ada_1_acc = accuracy(y_1_test, Ada_1_prediction)
         t3 = time()       
-
-
+# #############################################################################
+# Compute a PCA (eigenvalues) on the dataset (treated as unlabeled
+# dataset): unsupervised feature extraction / dimensionality reduction
+        n_components = attributes_1.shape[1] 
+        t4 = time()
+        pca_1 = PCA(n_components=n_components, svd_solver='randomized',whiten=True).fit(x_1_train)
+        x_1_train_pca = pca_1.transform(x_1_train)
+        x_1_test_pca = pca_1.transform(x_1_test) 
+        t5 = time()
+        svc_clf = SVC(C=1000, class_weight='balanced', gamma=0.01)
+        svc_clf = svc_clf.fit(x_1_train_pca, y_1_train)
         print ("At %d number of fold, the accuracy of adaboost classifier on data set 1: %f" %(counter,Ada_1_acc))
     print("The Adaboost training time on data set 1 is %f ms" % ((t2 - t1)*1000))
     print("The total computation time on data set 1 is %f ms" % ((t3 - t0)*1000))
