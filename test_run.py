@@ -1,19 +1,20 @@
 import numpy as np
 from time import time
 import pandas as pd
-from sklearn.model_selection import  KFold
+from sklearn.model_selection import KFold
 from sklearn import preprocessing
 from adaboost import Adaboost
 
 # define the accuracy calculation function
 def accuracy(true_label, prediction):
     accuracy = np.sum(true_label == prediction) / len(true_label)
-    return accuracy 
-    
+    return accuracy
+
 ## file location is subject to change
 data_set    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
-#data_set    =  pd.read_csv(r'/home/aaron/Desktop/car.data',header=0)
-#print (data_set.head())
+# data_set    =  pd.read_csv(r'car_2class.data',header=0)
+# data_set    =  pd.read_csv(r'/home/aaron/Desktop/car.data',header=0)
+# print (data_set.head())
 
 # header info (reference)
 # buying,maint,door,persons,lug_boot,safety,target_label
@@ -32,26 +33,25 @@ label      =   np.array(target_label)
 attributes =   np.array(list(zip(buying,maint,door,persons,lug_boot,safety)))
 
 for i in range (2,7):
-    
+
 # cross validation using k fold from sklearn
-    kf = KFold(n_splits=i,shuffle=True)
-    counter =0 
-    print("When the number of spilt is", i)
-    for train_index, test_index in kf.split(attributes): 
+    kf = KFold(n_splits=i, shuffle=True)
+    counter = 0
+    print("\n\nWhen the number of spilt is", i)
+    for train_index, test_index in kf.split(attributes):
         t0 = time()
         x_train, x_test = attributes[train_index], attributes[test_index]
         y_train, y_test = label[train_index], label[test_index]
         t1 = time()
-        counter=counter+1
+        counter = counter + 1
         Ada_clf = Adaboost(n_clf=5)
-        Ada_clf.fit(x_train, y_train)  
+        Ada_clf.fit(x_train, y_train)
         t2 = time()
         Ada_prediction = Ada_clf.predict(x_test)
         t3 = time()
-        
+
         Ada_acc = accuracy(y_test, Ada_prediction)
-            
-        print ("At %d number of fold, the accuracy of adaboost classifier: %f" %(counter,Ada_acc))
-    print("The Adaboost training time is %f ms" % ((t2 - t1)*1000))
+
+        print ("At %d number of fold, the accuracy of adaboost classifier: %.2f%% " %(counter, Ada_acc*100))
+    print("\nThe Adaboost training time is %f ms" % ((t2 - t1)*1000))
     print("The total computation time is %f ms" % ((t3 - t0)*1000))
-            
