@@ -22,9 +22,9 @@ The data set downloaded from UCI ML repository has been modified to fit the adab
 <br>
 The target label has been changed from 4 classes to 2 classes:
 <br>
-unacc => unacc
+unacc => -1
 <br>
-acc, good , v_good => acc
+acc, good , v_good => 1
 <br>
 If the data sets have more than two classes(labels) the accuracy will be significant reduced
 <br><br> 
