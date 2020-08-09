@@ -43,7 +43,6 @@ for i in range (2,7):
     total_t_avg = 0
     print("\n\nData Set 1 with the number of spilt is", i, "( Training:",train_index,"Testing:",test_index,")")
 
-    t0 = time()
     x_1_train, x_1_test = attributes_1[0:train_index], attributes_1[train_index:label_1.shape[0]]
     y_1_train, y_1_test = label_1[0:train_index], label_1[train_index:label_1.shape[0]]
 
@@ -57,6 +56,7 @@ for i in range (2,7):
     y_1_test = (y_1_test + 1) / 2
 
     for k in (3,5,7):
+        t1 = time()
         for l in range(test_index):
             dist = np.sum((x_1_train - x_1_test[l,:])**2, axis=1)**0.5
             sortIndex = np.argsort(dist)
@@ -64,10 +64,12 @@ for i in range (2,7):
             prediction = (sum(bestLabels) > k/2.0)*1
             # print("Prediction vs Actual:", prediction,"vs",y_1_test[l])
             errors[l] = (y_1_test[l] != prediction)
+        t2 = time()
 
         TotalErrors = np.sum(errors)
         Accuracy = (1-(TotalErrors) / test_index )*100
-        print("\nIf k =", k, "==> Total Errors:", TotalErrors, "(Accuracy: %.2f%%)" % Accuracy)
+        print("\nIf k =", k, "==> Total Errors:", TotalErrors, "(Accuracy: %.2f%%), (Computation time: %.0f ms)" % (Accuracy,((t2-t1)*1000)))
+        # print("The total computation time on data set 1 is %.0f ms\n" % ((t2-t1)*1000))
 
 
 
