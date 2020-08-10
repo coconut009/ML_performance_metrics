@@ -10,12 +10,12 @@ from sklearn.svm import SVC
 
 
 ## file location is subject to change
-# data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
-# data_set_2    =   pd.DataFrame.to_numpy(pd.read_csv(r'/home/aaron/Desktop/heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
+data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
+data_set_2    =   pd.DataFrame.to_numpy(pd.read_csv(r'/home/aaron/Desktop/heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
 
 ## File location for Jin
-data_set_1 = pd.read_csv(r'car_2class.data',header=0)
-data_set_2 = pd.DataFrame.to_numpy(pd.read_csv(r'heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
+#data_set_1 = pd.read_csv(r'car_2class.data',header=0)
+#data_set_2 = pd.DataFrame.to_numpy(pd.read_csv(r'heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
 
 #############################################################################################
 # first data set header info (reference)

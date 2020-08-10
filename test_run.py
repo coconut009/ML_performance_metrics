@@ -14,13 +14,12 @@ def accuracy(true_label, prediction):
     return accuracy
 
 ## file location is subject to change
-# data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
-# data_set_2    =   pd.DataFrame.to_numpy(pd.read_csv(r'/home/aaron/Desktop/heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
+data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
+data_set_2    =   pd.DataFrame.to_numpy(pd.read_csv(r'/home/aaron/Desktop/heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
 
 ## File location for Jin
-data_set_1 = pd.read_csv(r'car_2class.data',header=0)
-data_set_2 = pd.DataFrame.to_numpy(pd.read_csv(r'heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
-
+#data_set_1 = pd.read_csv(r'car_2class.data',header=0)
+#data_set_2 = pd.DataFrame.to_numpy(pd.read_csv(r'heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
 
 #############################################################################################
 # first data set header info (reference)
@@ -34,17 +33,19 @@ persons = le.fit_transform(list(data_set_1["persons"]))
 lug_boot = le.fit_transform(list(data_set_1["lug_boot"]))
 safety = le.fit_transform(list(data_set_1["safety"]))
 target_label = list(data_set_1["target_label"])
-
+# zip all the transformed data into numpy array
 label_1     =   np.array(target_label)
 attributes_1=   np.array(list(zip(buying,maint,door,persons,lug_boot,safety)))
+
+# second data set
+label_2     =   data_set_2[:,-1]
+attributes_2=   data_set_2[:,:-1]
+
+#############################################################################################
 
 # define the classifiers for data set 1
 Ada_1_clf = AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 5, learning_rate = 1)
 
-#############################################################################################
-# second data set
-label_2     =   data_set_2[:,-1]
-attributes_2=   data_set_2[:,:-1]
 # define the classifiers for data set 2
 Ada_2_clf = AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 15, learning_rate = 1)
 
@@ -53,8 +54,10 @@ print("====Data Set 1====")
 for i in range (2,7):
     kf = KFold(n_splits=i,shuffle=True)
     counter =0
-    train_t_avg = 0
-    total_t_avg = 0
+    ada_train_t_avg = 0
+    ada_total_t_avg = 0
+    svc_train_t_avg = 0
+    svc_total_t_avg = 0   
     print("Data Set 1 with the number of spilt is", i)
     for train_index, test_index in kf.split(attributes_1):
         t0 = time()
@@ -73,26 +76,39 @@ for i in range (2,7):
         n_components = attributes_1.shape[1]
         t4 = time()
         pca_1 = PCA(n_components=n_components, svd_solver='randomized',whiten=True).fit(x_1_train)
-        x_1_train_pca = pca_1.transform(x_1_train)
-        x_1_test_pca = pca_1.transform(x_1_test)
+        x_1_train_pca = pca_1.transform(x_1_train) 
+        X_1_test_pca = pca_1.transform(x_1_test)
         t5 = time()
-        svc_clf = SVC(C=1000, class_weight='balanced', gamma=0.01)
-        svc_clf = svc_clf.fit(x_1_train_pca, y_1_train)
+        svc_1_clf = SVC(C=100, class_weight='balanced', gamma=0.05)
+        svc_1_clf = svc_1_clf.fit(x_1_train_pca, y_1_train)
+        t6 = time()
+        svc_1_pred = svc_1_clf.predict(X_1_test_pca)
+        svc_1_acc = accuracy(y_1_test,svc_1_pred)
+        t7 = time()
         print ("At %d number of fold, the accuracy of adaboost classifier on data set 1: %.2f%%" %(counter,Ada_1_acc*100))
-        train_t_avg = train_t_avg + t2-t1
-        total_t_avg = total_t_avg + t3-t0
-    train_t_avg = train_t_avg / counter
-    total_t_avg = total_t_avg / counter
-    print("\nThe Adaboost training time on data set 1 is %f ms" % (train_t_avg*1000))
-    print("The total computation time on data set 1 is %f ms\n\n" % (total_t_avg*1000))
+        print ("At %d number of fold, the accuracy of SVM classifier on data set 1: %.2f%%" %(counter,svc_1_acc*100))
+        ada_train_t_avg = ada_train_t_avg + t2-t1
+        ada_total_t_avg = ada_total_t_avg + t3-t0
+        svc_train_t_avg = svc_train_t_avg + t6-t5
+        svc_total_t_avg = svc_total_t_avg + t7-t4 +t1-t0
+    ada_train_t_avg = ada_train_t_avg / counter
+    ada_total_t_avg = ada_total_t_avg / counter
+    svc_train_t_avg = svc_train_t_avg / counter
+    svc_total_t_avg = svc_total_t_avg / counter
+    print("\nThe Adaboost training time on data set 1 is %f ms" % (ada_train_t_avg*1000))
+    print("The total computation time on data set 1 is %f ms" % (ada_total_t_avg*1000))
+    print("The SVM training time on data set 1 is %f ms" % (svc_train_t_avg*1000))
+    print("The total computation time on data set 1 is %f ms" % (svc_total_t_avg*1000))
 
 print("====Data Set 2====")
 # cross validation using k fold from sklearn
 for i in range (2,7):
     kf = KFold(n_splits=i,shuffle=True)
     counter =0
-    train_t_avg = 0
-    total_t_avg = 0
+    ada_train_t_avg = 0
+    ada_total_t_avg = 0
+    svc_train_t_avg = 0
+    svc_total_t_avg = 0  
     print("Data Set 2 with the number of spilt is", i)
     for train_index, test_index in kf.split(attributes_2):
         t0 = time()
@@ -104,11 +120,33 @@ for i in range (2,7):
         Ada_2_prediction = Ada_2_clf.predict(x_2_test)
         counter=counter+1
         Ada_2_acc = accuracy(y_2_test, Ada_2_prediction)
-        t3 = time()
+        t3 = time()         
+# #############################################################################
+# Compute a PCA (eigenvalues) on the dataset (treated as unlabeled
+# dataset): unsupervised feature extraction / dimensionality reduction
+        n_components = attributes_2.shape[1]
+        t4 = time()
+        pca_2 = PCA(n_components=n_components, svd_solver='randomized',whiten=True).fit(x_2_train)
+        x_2_train_pca = pca_2.transform(x_2_train) 
+        X_2_test_pca = pca_2.transform(x_2_test)
+        t5 = time()
+        svc_2_clf = SVC(C=1000, class_weight='balanced', gamma=0.01)
+        svc_2_clf = svc_2_clf.fit(x_2_train_pca, y_2_train)
+        t6 = time()
+        svc_2_pred = svc_2_clf.predict(X_2_test_pca)
+        svc_2_acc = accuracy(y_2_test,svc_2_pred)
+        t7 = time()
         print ("At %d number of fold, the accuracy of adaboost classifier on data set 2: %.2f%%" %(counter,Ada_2_acc*100))
-        train_t_avg = train_t_avg + t2-t1
-        total_t_avg = total_t_avg + t3-t0
-    train_t_avg = train_t_avg / counter
-    total_t_avg = total_t_avg / counter
-    print("\nThe Adaboost training time on data set 2 is %f ms" % (train_t_avg*1000))
-    print("The total computation time on data set 2 is %f ms\n\n" % (total_t_avg*1000))
+        print ("At %d number of fold, the accuracy of SVM classifier on data set 2: %.2f%%" %(counter,svc_2_acc*100))
+        ada_train_t_avg = ada_train_t_avg + t2-t1
+        ada_total_t_avg = ada_total_t_avg + t3-t0
+        svc_train_t_avg = svc_train_t_avg + t6-t5
+        svc_total_t_avg = svc_total_t_avg + t7-t4 +t1-t0
+    ada_train_t_avg = ada_train_t_avg / counter
+    ada_total_t_avg = ada_total_t_avg / counter
+    svc_train_t_avg = svc_train_t_avg / counter
+    svc_total_t_avg = svc_total_t_avg / counter
+    print("\nThe Adaboost training time on data set 1 is %f ms" % (ada_train_t_avg*1000))
+    print("The total computation time on data set 1 is %f ms" % (ada_total_t_avg*1000))
+    print("The SVM training time on data set 1 is %f ms" % (svc_train_t_avg*1000))
+    print("The total computation time on data set 1 is %f ms" % (svc_total_t_avg*1000))

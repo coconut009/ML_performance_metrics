@@ -19,6 +19,7 @@ def accuracy(true_label, prediction):
 
 #data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
 data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
+data_set_2    =   pd.DataFrame.to_numpy(pd.read_csv(r'/home/aaron/Desktop/heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
 
 le = preprocessing.LabelEncoder()
 buying = le.fit_transform(list(data_set_1["buying"]))
@@ -29,11 +30,15 @@ lug_boot = le.fit_transform(list(data_set_1["lug_boot"]))
 safety = le.fit_transform(list(data_set_1["safety"]))
 target_label = list(data_set_1["target_label"])
 
-label_1     =   np.array(target_label)
+#label_1     =   np.array(target_label)
 #label_1     =   np.array(data_set_1["target_label"])
-attributes_1=   np.array(list(zip(buying,maint,door,persons,lug_boot,safety)))
-
-X_train, X_test, y_train, y_test = train_test_split(attributes_1, label_1, test_size=0.2, random_state=5)
+#attributes_1=   np.array(list(zip(buying,maint,door,persons,lug_boot,safety)))
+label_2     =   data_set_2[:,-1]
+attributes_2=   data_set_2[:,:-1]
+#data set 1
+#X_train, X_test, y_train, y_test = train_test_split(attributes_1, label_1, test_size=0.2, random_state=5)
+#data set 2
+X_train, X_test, y_train, y_test = train_test_split(attributes_2, label_2, test_size=0.2, random_state=5)
 
 #adb = AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 5, learning_rate = 1)
 #adb.fit(X_train,y_train)
