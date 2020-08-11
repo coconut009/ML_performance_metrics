@@ -71,10 +71,6 @@ for i in range (2,7):
         print("\nIf k =", k, "==> Total Errors:", TotalErrors, "(Accuracy: %.2f%%), (Computation time: %.0f ms)" % (Accuracy,((t2-t1)*1000)))
         # print("The total computation time on data set 1 is %.0f ms\n" % ((t2-t1)*1000))
     print("\n")
-
-
-
-
 #############################################################################################
 # second data set
 label_2     =   data_set_2[:,-1]
