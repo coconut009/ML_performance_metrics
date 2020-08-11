@@ -55,7 +55,7 @@ for i in range (2,7):
     y_1_train = (y_1_train + 1) / 2
     y_1_test = (y_1_test + 1) / 2
 
-    for k in (3,5,7):
+    for k in (3,5,7,9,11):
         t1 = time()
         for l in range(test_index):
             dist = np.sum((x_1_train - x_1_test[l,:])**2, axis=1)**0.5

@@ -9,7 +9,6 @@ from sklearn.svm import SVC
 from prettytable import PrettyTable
 from sklearn.decomposition import PCA
 
-#data_set_2    =   pd.DataFrame.to_numpy(pd.read_csv(r'/home/aaron/Desktop/heart_failure_clinical_records_dataset.csv',header=0))
 #label_2     =   data_set_2[:,-1]
 #attributes_2=   data_set_2[:,:-1]
 def accuracy(true_label, prediction):
@@ -17,9 +16,8 @@ def accuracy(true_label, prediction):
     return accuracy 
 
 
-#data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
 data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
-data_set_2    =   pd.DataFrame.to_numpy(pd.read_csv(r'/home/aaron/Desktop/heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
+data_set_2    = np.loadtxt('/home/aaron/Desktop/page-blocks.data')
 
 le = preprocessing.LabelEncoder()
 buying = le.fit_transform(list(data_set_1["buying"]))
@@ -47,7 +45,7 @@ results_List=[]
 results_List_c=[]
 results_List_g=[]
 component_list=[]
-run_time = 6
+run_time = attributes_2.shape[1]
 c_list = [1, 100, 1000, 10000]
 g_list = [0.001, 0.005, 0.01, 0.05]
 for element_g in g_list:
