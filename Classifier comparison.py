@@ -134,7 +134,7 @@ for i in range (2,7):
         t3 = time()
         print ("At %d number of fold, the accuracy of adaboost classifier on data set 1: %.2f%%" %(counter,ada_boost_1[0]*100))
         print ("At %d number of fold, the accuracy of SVM classifier on data set 1: %.2f%%" %(counter,svm_1[0]*100))
-        print("At %d number of fold,When the k value is %d, it has the hightest accuracy value %.2f%%" %(counter,k[knn_1.index(max(knn_1))], 100*max(knn_1)))
+        print("At %d number of fold, on data set 1 when the k value is %d, it has the hightest accuracy value %.2f%%" %(counter,k[knn_1.index(max(knn_1))], 100*max(knn_1)))
         ada_train_t_avg = ada_train_t_avg + ada_boost_1[1]
         ada_total_t_avg = ada_total_t_avg + ada_boost_1[2]+t1-t0
         svc_train_t_avg = svc_train_t_avg + svm_1[1]
@@ -180,7 +180,7 @@ for i in range (2,7):
         t3 = time()
         print ("At %d number of fold, the accuracy of adaboost classifier on data set 2: %.2f%%" %(counter,ada_boost_2[0]*100))
         print ("At %d number of fold, the accuracy of SVM classifier on data set 2: %.2f%%" %(counter,svm_2[0]*100))
-        print ("At %d number of fold, when the k value is %d, it has the hightest accuracy value %.2f%%" %(counter,k[knn_1.index(max(knn_1))], 100*max(knn_1)))
+        print ("At %d number of fold, on data set 2 when the k value is %d, it has the hightest accuracy value %.2f%%" %(counter,k[knn_2.index(max(knn_2))], 100*max(knn_2)))
         ada_train_t_avg = ada_train_t_avg + ada_boost_2[1]+t1-t0
         ada_total_t_avg = ada_total_t_avg + ada_boost_2[2]+t1-t0
         svc_train_t_avg = svc_train_t_avg + svm_2[1]
