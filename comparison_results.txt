@@ -1,0 +1,192 @@
+====Data Set 1====
+Data Set 1 with the number of spilt is 2
+At 1 number of fold, the accuracy of adaboost classifier on data set 1: 98.26%
+At 1 number of fold, the accuracy of SVM classifier on data set 1: 97.69%
+At 1 number of fold, on data set 1 when the k value is 5, it has the hightest accuracy value 93.40%
+At 2 number of fold, the accuracy of adaboost classifier on data set 1: 98.38%
+At 2 number of fold, the accuracy of SVM classifier on data set 1: 98.50%
+At 2 number of fold, on data set 1 when the k value is 5, it has the hightest accuracy value 91.78%
+
+The Adaboost training time on data set 1 is 10.223985 ms
+The total computation time of Adaboost classifier on data set 1 is 12.228251 ms
+The SVM training time on data set 1 is 65.781116 ms
+The total computation time of SVM classifier on data set 1 is 70.349097 ms
+The KNN classifier total computation time on data set 2 is 300.257087 ms
+Data Set 1 with the number of spilt is 3
+At 1 number of fold, the accuracy of adaboost classifier on data set 1: 98.09%
+At 1 number of fold, the accuracy of SVM classifier on data set 1: 99.13%
+At 1 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 94.62%
+At 2 number of fold, the accuracy of adaboost classifier on data set 1: 98.44%
+At 2 number of fold, the accuracy of SVM classifier on data set 1: 99.31%
+At 2 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 95.31%
+At 3 number of fold, the accuracy of adaboost classifier on data set 1: 98.96%
+At 3 number of fold, the accuracy of SVM classifier on data set 1: 99.65%
+At 3 number of fold, on data set 1 when the k value is 5, it has the hightest accuracy value 93.58%
+
+The Adaboost training time on data set 1 is 7.326444 ms
+The total computation time of Adaboost classifier on data set 1 is 8.462429 ms
+The SVM training time on data set 1 is 94.147921 ms
+The total computation time of SVM classifier on data set 1 is 97.155094 ms
+The KNN classifier total computation time on data set 2 is 199.347258 ms
+Data Set 1 with the number of spilt is 4
+At 1 number of fold, the accuracy of adaboost classifier on data set 1: 97.22%
+At 1 number of fold, the accuracy of SVM classifier on data set 1: 98.61%
+At 1 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 97.69%
+At 2 number of fold, the accuracy of adaboost classifier on data set 1: 99.54%
+At 2 number of fold, the accuracy of SVM classifier on data set 1: 99.07%
+At 2 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 93.98%
+At 3 number of fold, the accuracy of adaboost classifier on data set 1: 97.69%
+At 3 number of fold, the accuracy of SVM classifier on data set 1: 99.77%
+At 3 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 96.99%
+At 4 number of fold, the accuracy of adaboost classifier on data set 1: 99.54%
+At 4 number of fold, the accuracy of SVM classifier on data set 1: 100.00%
+At 4 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 96.30%
+
+The Adaboost training time on data set 1 is 7.044077 ms
+The total computation time of Adaboost classifier on data set 1 is 8.005619 ms
+The SVM training time on data set 1 is 108.618259 ms
+The total computation time of SVM classifier on data set 1 is 110.249281 ms
+The KNN classifier total computation time on data set 2 is 167.315006 ms
+Data Set 1 with the number of spilt is 5
+At 1 number of fold, the accuracy of adaboost classifier on data set 1: 98.84%
+At 1 number of fold, the accuracy of SVM classifier on data set 1: 99.71%
+At 1 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 95.66%
+At 2 number of fold, the accuracy of adaboost classifier on data set 1: 99.71%
+At 2 number of fold, the accuracy of SVM classifier on data set 1: 98.84%
+At 2 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 95.09%
+At 3 number of fold, the accuracy of adaboost classifier on data set 1: 99.13%
+At 3 number of fold, the accuracy of SVM classifier on data set 1: 98.55%
+At 3 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 93.93%
+At 4 number of fold, the accuracy of adaboost classifier on data set 1: 99.42%
+At 4 number of fold, the accuracy of SVM classifier on data set 1: 99.71%
+At 4 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 96.23%
+At 5 number of fold, the accuracy of adaboost classifier on data set 1: 99.71%
+At 5 number of fold, the accuracy of SVM classifier on data set 1: 99.42%
+At 5 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 98.26%
+
+The Adaboost training time on data set 1 is 7.526875 ms
+The total computation time of Adaboost classifier on data set 1 is 8.744860 ms
+The SVM training time on data set 1 is 98.786259 ms
+The total computation time of SVM classifier on data set 1 is 100.625038 ms
+The KNN classifier total computation time on data set 2 is 135.920000 ms
+Data Set 1 with the number of spilt is 6
+At 1 number of fold, the accuracy of adaboost classifier on data set 1: 98.61%
+At 1 number of fold, the accuracy of SVM classifier on data set 1: 100.00%
+At 1 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 96.53%
+At 2 number of fold, the accuracy of adaboost classifier on data set 1: 98.61%
+At 2 number of fold, the accuracy of SVM classifier on data set 1: 98.96%
+At 2 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 97.22%
+At 3 number of fold, the accuracy of adaboost classifier on data set 1: 99.65%
+At 3 number of fold, the accuracy of SVM classifier on data set 1: 99.65%
+At 3 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 98.61%
+At 4 number of fold, the accuracy of adaboost classifier on data set 1: 98.26%
+At 4 number of fold, the accuracy of SVM classifier on data set 1: 98.96%
+At 4 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 97.57%
+At 5 number of fold, the accuracy of adaboost classifier on data set 1: 100.00%
+At 5 number of fold, the accuracy of SVM classifier on data set 1: 99.65%
+At 5 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 96.53%
+At 6 number of fold, the accuracy of adaboost classifier on data set 1: 99.65%
+At 6 number of fold, the accuracy of SVM classifier on data set 1: 100.00%
+At 6 number of fold, on data set 1 when the k value is 7, it has the hightest accuracy value 94.44%
+
+The Adaboost training time on data set 1 is 7.559101 ms
+The total computation time of Adaboost classifier on data set 1 is 8.721232 ms
+The SVM training time on data set 1 is 102.781971 ms
+The total computation time of SVM classifier on data set 1 is 104.122519 ms
+The KNN classifier total computation time on data set 2 is 130.068819 ms
+====Data Set 2====
+Data Set 2 with the number of spilt is 2
+At 1 number of fold, the accuracy of adaboost classifier on data set 2: 96.71%
+At 1 number of fold, the accuracy of SVM classifier on data set 2: 93.39%
+At 1 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.73%
+At 2 number of fold, the accuracy of adaboost classifier on data set 2: 97.00%
+At 2 number of fold, the accuracy of SVM classifier on data set 2: 94.70%
+At 2 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.47%
+
+The Adaboost training time on data set 1 is 592.621326 ms
+The total computation time on data set 1 is 608.405471 ms
+The SVM training time on data set 2 is 155.888319 ms
+The total computation time on data set 2 is 183.588743 ms
+The KNN classifier total computation time on data set 2 is 813.293338 ms
+Data Set 2 with the number of spilt is 3
+At 1 number of fold, the accuracy of adaboost classifier on data set 2: 96.99%
+At 1 number of fold, the accuracy of SVM classifier on data set 2: 93.37%
+At 1 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.45%
+At 2 number of fold, the accuracy of adaboost classifier on data set 2: 97.09%
+At 2 number of fold, the accuracy of SVM classifier on data set 2: 94.13%
+At 2 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.50%
+At 3 number of fold, the accuracy of adaboost classifier on data set 2: 97.15%
+At 3 number of fold, the accuracy of SVM classifier on data set 2: 94.90%
+At 3 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 96.33%
+
+The Adaboost training time on data set 1 is 399.877071 ms
+The total computation time on data set 1 is 411.389589 ms
+The SVM training time on data set 2 is 232.740402 ms
+The total computation time on data set 2 is 256.523927 ms
+The KNN classifier total computation time on data set 2 is 541.913589 ms
+Data Set 2 with the number of spilt is 4
+At 1 number of fold, the accuracy of adaboost classifier on data set 2: 97.52%
+At 1 number of fold, the accuracy of SVM classifier on data set 2: 93.21%
+At 1 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 96.27%
+At 2 number of fold, the accuracy of adaboost classifier on data set 2: 96.56%
+At 2 number of fold, the accuracy of SVM classifier on data set 2: 93.49%
+At 2 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.39%
+At 3 number of fold, the accuracy of adaboost classifier on data set 2: 96.64%
+At 3 number of fold, the accuracy of SVM classifier on data set 2: 93.20%
+At 3 number of fold, on data set 2 when the k value is 5, it has the hightest accuracy value 95.98%
+At 4 number of fold, the accuracy of adaboost classifier on data set 2: 97.00%
+At 4 number of fold, the accuracy of SVM classifier on data set 2: 94.23%
+At 4 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.47%
+
+The Adaboost training time on data set 1 is 556.060135 ms
+The total computation time on data set 1 is 566.452682 ms
+The SVM training time on data set 2 is 276.218057 ms
+The total computation time on data set 2 is 296.509147 ms
+The KNN classifier total computation time on data set 2 is 461.946785 ms
+Data Set 2 with the number of spilt is 5
+At 1 number of fold, the accuracy of adaboost classifier on data set 2: 97.17%
+At 1 number of fold, the accuracy of SVM classifier on data set 2: 93.15%
+At 1 number of fold, on data set 2 when the k value is 7, it has the hightest accuracy value 96.16%
+At 2 number of fold, the accuracy of adaboost classifier on data set 2: 96.16%
+At 2 number of fold, the accuracy of SVM classifier on data set 2: 93.88%
+At 2 number of fold, on data set 2 when the k value is 7, it has the hightest accuracy value 94.98%
+At 3 number of fold, the accuracy of adaboost classifier on data set 2: 96.62%
+At 3 number of fold, the accuracy of SVM classifier on data set 2: 93.61%
+At 3 number of fold, on data set 2 when the k value is 5, it has the hightest accuracy value 94.61%
+At 4 number of fold, the accuracy of adaboost classifier on data set 2: 96.80%
+At 4 number of fold, the accuracy of SVM classifier on data set 2: 93.60%
+At 4 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.70%
+At 5 number of fold, the accuracy of adaboost classifier on data set 2: 97.99%
+At 5 number of fold, the accuracy of SVM classifier on data set 2: 94.06%
+At 5 number of fold, on data set 2 when the k value is 7, it has the hightest accuracy value 97.07%
+
+The Adaboost training time on data set 1 is 540.638161 ms
+The total computation time on data set 1 is 550.320482 ms
+The SVM training time on data set 2 is 298.261261 ms
+The total computation time on data set 2 is 315.662193 ms
+The KNN classifier total computation time on data set 2 is 422.447634 ms
+Data Set 2 with the number of spilt is 6
+At 1 number of fold, the accuracy of adaboost classifier on data set 2: 96.50%
+At 1 number of fold, the accuracy of SVM classifier on data set 2: 94.19%
+At 1 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.62%
+At 2 number of fold, the accuracy of adaboost classifier on data set 2: 96.82%
+At 2 number of fold, the accuracy of SVM classifier on data set 2: 93.86%
+At 2 number of fold, on data set 2 when the k value is 3, it has the hightest accuracy value 95.29%
+At 3 number of fold, the accuracy of adaboost classifier on data set 2: 96.93%
+At 3 number of fold, the accuracy of SVM classifier on data set 2: 93.75%
+At 3 number of fold, on data set 2 when the k value is 5, it has the hightest accuracy value 96.16%
+At 4 number of fold, the accuracy of adaboost classifier on data set 2: 96.71%
+At 4 number of fold, the accuracy of SVM classifier on data set 2: 92.54%
+At 4 number of fold, on data set 2 when the k value is 5, it has the hightest accuracy value 95.50%
+At 5 number of fold, the accuracy of adaboost classifier on data set 2: 96.93%
+At 5 number of fold, the accuracy of SVM classifier on data set 2: 93.97%
+At 5 number of fold, on data set 2 when the k value is 5, it has the hightest accuracy value 95.94%
+At 6 number of fold, the accuracy of adaboost classifier on data set 2: 97.81%
+At 6 number of fold, the accuracy of SVM classifier on data set 2: 94.85%
+At 6 number of fold, on data set 2 when the k value is 5, it has the hightest accuracy value 96.71%
+
+The Adaboost training time on data set 1 is 946.938475 ms
+The total computation time on data set 1 is 956.662973 ms
+The SVM training time on data set 2 is 315.131386 ms
+The total computation time on data set 2 is 330.312649 ms
+The KNN classifier total computation time on data set 2 is 405.007482 ms
