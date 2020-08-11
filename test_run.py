@@ -1,17 +1,29 @@
 import numpy as np
 from time import time
 import pandas as pd
-from sklearn.model_selection import  KFold
+
 from sklearn import preprocessing
+from sklearn.model_selection import  KFold
 from sklearn.tree import DecisionTreeClassifier
 from sklearn. ensemble import AdaBoostClassifier
 from sklearn.decomposition import PCA
 from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+
 
 # define the accuracy calculation function
 def accuracy(true_label, prediction):
     accuracy = np.sum(true_label == prediction) / len(true_label)
     return accuracy
+# define the KNN algorithm call:
+def knn(x_train,y_train,x_test,y_test,k):
+  for element in k:
+    knn = KNeighborsClassifier(n_neighbors=element)
+    knn_pred = knn.fit(x_train,y_train)
+    #knn_acc=accuracy(y_test,knn_pred)
+    acc=knn.score(x_test,y_test)
+
+  return acc
 
 ## file location is subject to change
 data_set_1    =  pd.read_csv(r'/home/aaron/Desktop/car_2class.data',header=0)
@@ -49,6 +61,9 @@ Ada_1_clf = AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 5, learni
 # define the classifiers for data set 2
 Ada_2_clf = AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 15, learning_rate = 1)
 
+#define the value of K for KNN algorithm
+k=[3,5,7,9]
+
 print("====Data Set 1====")
 # cross validation using k fold from sklearn
 for i in range (2,7):
@@ -77,20 +92,19 @@ for i in range (2,7):
         t4 = time()
         pca_1 = PCA(n_components=n_components, svd_solver='randomized',whiten=True).fit(x_1_train)
         x_1_train_pca = pca_1.transform(x_1_train) 
-        X_1_test_pca = pca_1.transform(x_1_test)
-        t5 = time()
+        X_1_test_pca = pca_1.transform(x_1_test)        
         svc_1_clf = SVC(C=100, class_weight='balanced', gamma=0.05)
         svc_1_clf = svc_1_clf.fit(x_1_train_pca, y_1_train)
-        t6 = time()
+        t5 = time()
         svc_1_pred = svc_1_clf.predict(X_1_test_pca)
         svc_1_acc = accuracy(y_1_test,svc_1_pred)
-        t7 = time()
+        t6 = time()
         print ("At %d number of fold, the accuracy of adaboost classifier on data set 1: %.2f%%" %(counter,Ada_1_acc*100))
         print ("At %d number of fold, the accuracy of SVM classifier on data set 1: %.2f%%" %(counter,svc_1_acc*100))
         ada_train_t_avg = ada_train_t_avg + t2-t1
         ada_total_t_avg = ada_total_t_avg + t3-t0
-        svc_train_t_avg = svc_train_t_avg + t6-t5
-        svc_total_t_avg = svc_total_t_avg + t7-t4 +t1-t0
+        svc_train_t_avg = svc_train_t_avg + t5-t4
+        svc_total_t_avg = svc_total_t_avg + t6-t4 +t1-t0
     ada_train_t_avg = ada_train_t_avg / counter
     ada_total_t_avg = ada_total_t_avg / counter
     svc_train_t_avg = svc_train_t_avg / counter
@@ -129,19 +143,18 @@ for i in range (2,7):
         pca_2 = PCA(n_components=n_components, svd_solver='randomized',whiten=True).fit(x_2_train)
         x_2_train_pca = pca_2.transform(x_2_train) 
         X_2_test_pca = pca_2.transform(x_2_test)
-        t5 = time()
         svc_2_clf = SVC(C=1000, class_weight='balanced', gamma=0.01)
         svc_2_clf = svc_2_clf.fit(x_2_train_pca, y_2_train)
-        t6 = time()
+        t5 = time()
         svc_2_pred = svc_2_clf.predict(X_2_test_pca)
         svc_2_acc = accuracy(y_2_test,svc_2_pred)
-        t7 = time()
+        t6 = time()
         print ("At %d number of fold, the accuracy of adaboost classifier on data set 2: %.2f%%" %(counter,Ada_2_acc*100))
         print ("At %d number of fold, the accuracy of SVM classifier on data set 2: %.2f%%" %(counter,svc_2_acc*100))
         ada_train_t_avg = ada_train_t_avg + t2-t1
         ada_total_t_avg = ada_total_t_avg + t3-t0
-        svc_train_t_avg = svc_train_t_avg + t6-t5
-        svc_total_t_avg = svc_total_t_avg + t7-t4 +t1-t0
+        svc_train_t_avg = svc_train_t_avg + t5-t4
+        svc_total_t_avg = svc_total_t_avg + t6-t4 +t1-t0
     ada_train_t_avg = ada_train_t_avg / counter
     ada_total_t_avg = ada_total_t_avg / counter
     svc_train_t_avg = svc_train_t_avg / counter
