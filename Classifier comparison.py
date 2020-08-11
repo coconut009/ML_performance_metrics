@@ -15,6 +15,23 @@ from sklearn.neighbors import KNeighborsClassifier
 def accuracy(true_label, prediction):
     accuracy = np.sum(true_label == prediction) / len(true_label)
     return accuracy
+
+# define the True Positive Counter function
+def TP_cnt(true_label, prediction):
+    TP_cnt = np.sum(true_label+prediction==2)
+    return TP_cnt
+
+# define the False Positive Counter function (if Falce == -1)
+def FP_cnt_minusOne(true_label, prediction):
+    FP_cnt = np.sum(prediction-true_label==2)
+    return FP_cnt
+
+# define the False Positive Counter function (if False == 0)
+def FP_cnt_zero(true_label, prediction):
+    FP_cnt = np.sum(prediction-true_label==1)
+    return FP_cnt
+
+    
 ###############################################################################
 # define the KNN algorithm call:
 k=[3,5,7,9]
@@ -32,7 +49,7 @@ def knn(x_train,y_train,x_test,y_test,k):
 # return the acc value with training and testing time
 
 Ada_clf =   AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 15, learning_rate = 1)
-def ada_boost(x_train,y_train,x_test,y_test):    
+def ada_boost(x_train,y_train,x_test,y_test):
     t0 = time()
     #Ada_clf = AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 5, learning_rate = 1)
     Ada_clf.fit(x_train, y_train)
@@ -53,7 +70,7 @@ def ada_boost(x_train,y_train,x_test,y_test):
 def svm_call (x_train,y_train,x_test,y_test,n_components):
     t0 = time()
     pca = PCA(n_components=n_components, svd_solver='randomized',whiten=True).fit(x_train)
-    x_train_pca = pca.transform(x_train) 
+    x_train_pca = pca.transform(x_train)
     X_test_pca = pca.transform(x_test)
     svc_clf = SVC(C=1000, class_weight='balanced', gamma=0.05)
     svc_clf = svc_clf.fit(x_train_pca, y_train)
@@ -117,8 +134,8 @@ for i in range (2,7):
     ada_train_t_avg = 0
     ada_total_t_avg = 0
     svc_train_t_avg = 0
-    svc_total_t_avg = 0  
-    knn_total_t_avg = 0   
+    svc_total_t_avg = 0
+    knn_total_t_avg = 0
     print("Data Set 1 with the number of spilt is", i)
     for train_index, test_index in kf.split(attributes_1):
         t0 = time()
@@ -160,8 +177,8 @@ for i in range (2,7):
     ada_train_t_avg = 0
     ada_total_t_avg = 0
     svc_train_t_avg = 0
-    svc_total_t_avg = 0  
-    knn_total_t_avg = 0 
+    svc_total_t_avg = 0
+    knn_total_t_avg = 0
     print("Data Set 2 with the number of spilt is", i)
     for train_index, test_index in kf.split(attributes_2):
         t0 = time()
@@ -169,7 +186,7 @@ for i in range (2,7):
         y_2_train, y_2_test = label_2[train_index], label_2[test_index]
         t1 = time()
         counter=counter+1
-        ada_boost_2 = ada_boost(x_2_train,y_2_train,x_2_test,y_2_test)                
+        ada_boost_2 = ada_boost(x_2_train,y_2_train,x_2_test,y_2_test)
 # #############################################################################
 # Compute a PCA (eigenvalues) on the dataset (treated as unlabeled
 # dataset): unsupervised feature extraction / dimensionality reduction
@@ -184,7 +201,7 @@ for i in range (2,7):
         ada_train_t_avg = ada_train_t_avg + ada_boost_2[1]+t1-t0
         ada_total_t_avg = ada_total_t_avg + ada_boost_2[2]+t1-t0
         svc_train_t_avg = svc_train_t_avg + svm_2[1]
-        svc_total_t_avg = svc_total_t_avg + svm_2[2] +t1-t0         
+        svc_total_t_avg = svc_total_t_avg + svm_2[2] +t1-t0
         knn_total_t_avg = svc_total_t_avg + t3-t2 +t1-t0
     ada_train_t_avg = ada_train_t_avg / counter
     ada_total_t_avg = ada_total_t_avg / counter
@@ -196,4 +213,3 @@ for i in range (2,7):
     print("The SVM training time on data set 2 is %f ms" % (svc_train_t_avg*1000))
     print("The total computation time on data set 2 is %f ms" % (svc_total_t_avg*1000))
     print("The KNN classifier total computation time on data set 2 is %f ms" % (knn_total_t_avg*1000))
-
