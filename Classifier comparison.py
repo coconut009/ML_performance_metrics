@@ -96,7 +96,7 @@ def knn(x_train,y_train,x_test,y_test,k):
 ###############################################################################
 ## file location is subject to change
 data_set_1    =  pd.read_csv(r'car_2class.data',header=0)
-data_set_2    = np.loadtxt('/home/aaron/Desktop/page-blocks.data')
+data_set_2    = np.loadtxt('/home/aaron/Desktop/page-blocks.txt')
 
 ## File location for Jin
 #data_set_1 = pd.read_csv(r'car_2class.data',header=0)

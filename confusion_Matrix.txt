@@ -1,0 +1,352 @@
+====Data Set 1====
+Data Set 1 with the number of spilt is 2
+At 1 number of fold, tn: 584 on data set 1, the confusion matrix of Adaboost algorithm: fp:6 fn:8, tp:266  
+At 1 number of fold, tn: 581 on data set 1, the confusion matrix of SVM algorithm: fp:9 fn:4, tp:270 
+At 1 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 552, fp:38 fn:68, tp:206
+when k is 5 :tn: 568, fp:22 fn:50, tp:224
+when k is 7 :tn: 577, fp:13 fn:67, tp:207
+when k is 9 :tn: 583, fp:7 fn:93, tp:181
+At 2 number of fold, tn: 608 on data set 1, the confusion matrix of Adaboost algorithm: fp:12 fn:13, tp:231  
+At 2 number of fold, tn: 603 on data set 1, the confusion matrix of SVM algorithm: fp:17 fn:10, tp:234 
+At 2 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 579, fp:41 fn:56, tp:188
+when k is 5 :tn: 604, fp:16 fn:47, tp:197
+when k is 7 :tn: 599, fp:21 fn:49, tp:195
+when k is 9 :tn: 602, fp:18 fn:62, tp:182
+
+The Adaboost training time on data set 1 is 6.732583 ms
+The total computation time of Adaboost classifier on data set 1 is 10.332108 ms
+The SVM training time on data set 1 is 55.138469 ms
+The total computation time of SVM classifier on data set 1 is 63.793302 ms
+The KNN classifier total computation time on data set 1 is 504.747987 ms
+Data Set 1 with the number of spilt is 3
+At 1 number of fold, tn: 396 on data set 1, the confusion matrix of Adaboost algorithm: fp:1 fn:7, tp:172  
+At 1 number of fold, tn: 396 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:7, tp:172 
+At 1 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 378, fp:19 fn:51, tp:128
+when k is 5 :tn: 392, fp:5 fn:30, tp:149
+when k is 7 :tn: 390, fp:7 fn:42, tp:137
+when k is 9 :tn: 390, fp:7 fn:62, tp:117
+At 2 number of fold, tn: 417 on data set 1, the confusion matrix of Adaboost algorithm: fp:2 fn:7, tp:150  
+At 2 number of fold, tn: 413 on data set 1, the confusion matrix of SVM algorithm: fp:6 fn:0, tp:157 
+At 2 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 394, fp:25 fn:40, tp:117
+when k is 5 :tn: 410, fp:9 fn:26, tp:131
+when k is 7 :tn: 414, fp:5 fn:18, tp:139
+when k is 9 :tn: 412, fp:7 fn:32, tp:125
+At 3 number of fold, tn: 393 on data set 1, the confusion matrix of Adaboost algorithm: fp:1 fn:4, tp:178  
+At 3 number of fold, tn: 393 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:5, tp:177 
+At 3 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 374, fp:20 fn:53, tp:129
+when k is 5 :tn: 390, fp:4 fn:34, tp:148
+when k is 7 :tn: 390, fp:4 fn:33, tp:149
+when k is 9 :tn: 388, fp:6 fn:42, tp:140
+
+The Adaboost training time on data set 1 is 7.524570 ms
+The total computation time of Adaboost classifier on data set 1 is 11.096954 ms
+The SVM training time on data set 1 is 96.216202 ms
+The total computation time of SVM classifier on data set 1 is 102.370183 ms
+The KNN classifier total computation time on data set 1 is 335.317453 ms
+Data Set 1 with the number of spilt is 4
+At 1 number of fold, tn: 301 on data set 1, the confusion matrix of Adaboost algorithm: fp:0 fn:1, tp:130  
+At 1 number of fold, tn: 299 on data set 1, the confusion matrix of SVM algorithm: fp:2 fn:0, tp:131 
+At 1 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 291, fp:10 fn:40, tp:91
+when k is 5 :tn: 297, fp:4 fn:30, tp:101
+when k is 7 :tn: 299, fp:2 fn:20, tp:111
+when k is 9 :tn: 298, fp:3 fn:27, tp:104
+At 2 number of fold, tn: 319 on data set 1, the confusion matrix of Adaboost algorithm: fp:1 fn:2, tp:110  
+At 2 number of fold, tn: 319 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:0, tp:112 
+At 2 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 296, fp:24 fn:22, tp:90
+when k is 5 :tn: 314, fp:6 fn:16, tp:96
+when k is 7 :tn: 318, fp:2 fn:7, tp:105
+when k is 9 :tn: 316, fp:4 fn:21, tp:91
+At 3 number of fold, tn: 294 on data set 1, the confusion matrix of Adaboost algorithm: fp:0 fn:1, tp:137  
+At 3 number of fold, tn: 294 on data set 1, the confusion matrix of SVM algorithm: fp:0 fn:0, tp:138 
+At 3 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 269, fp:25 fn:44, tp:94
+when k is 5 :tn: 289, fp:5 fn:28, tp:110
+when k is 7 :tn: 292, fp:2 fn:19, tp:119
+when k is 9 :tn: 292, fp:2 fn:35, tp:103
+At 4 number of fold, tn: 293 on data set 1, the confusion matrix of Adaboost algorithm: fp:2 fn:4, tp:133  
+At 4 number of fold, tn: 293 on data set 1, the confusion matrix of SVM algorithm: fp:2 fn:2, tp:135 
+At 4 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 284, fp:11 fn:51, tp:86
+when k is 5 :tn: 291, fp:4 fn:34, tp:103
+when k is 7 :tn: 290, fp:5 fn:29, tp:108
+when k is 9 :tn: 294, fp:1 fn:41, tp:96
+
+The Adaboost training time on data set 1 is 8.086860 ms
+The total computation time of Adaboost classifier on data set 1 is 11.710227 ms
+The SVM training time on data set 1 is 99.241912 ms
+The total computation time of SVM classifier on data set 1 is 103.317440 ms
+The KNN classifier total computation time on data set 1 is 261.077523 ms
+Data Set 1 with the number of spilt is 5
+At 1 number of fold, tn: 244 on data set 1, the confusion matrix of Adaboost algorithm: fp:1 fn:0, tp:101  
+At 1 number of fold, tn: 245 on data set 1, the confusion matrix of SVM algorithm: fp:0 fn:0, tp:101 
+At 1 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 237, fp:8 fn:31, tp:70
+when k is 5 :tn: 244, fp:1 fn:20, tp:81
+when k is 7 :tn: 245, fp:0 fn:11, tp:90
+when k is 9 :tn: 241, fp:4 fn:23, tp:78
+At 2 number of fold, tn: 231 on data set 1, the confusion matrix of Adaboost algorithm: fp:3 fn:5, tp:107  
+At 2 number of fold, tn: 233 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:3, tp:109 
+At 2 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 224, fp:10 fn:38, tp:74
+when k is 5 :tn: 229, fp:5 fn:19, tp:93
+when k is 7 :tn: 232, fp:2 fn:19, tp:93
+when k is 9 :tn: 230, fp:4 fn:27, tp:85
+At 3 number of fold, tn: 243 on data set 1, the confusion matrix of Adaboost algorithm: fp:1 fn:4, tp:98  
+At 3 number of fold, tn: 243 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:4, tp:98 
+At 3 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 237, fp:7 fn:25, tp:77
+when k is 5 :tn: 243, fp:1 fn:13, tp:89
+when k is 7 :tn: 244, fp:0 fn:8, tp:94
+when k is 9 :tn: 244, fp:0 fn:10, tp:92
+At 4 number of fold, tn: 243 on data set 1, the confusion matrix of Adaboost algorithm: fp:0 fn:0, tp:102  
+At 4 number of fold, tn: 243 on data set 1, the confusion matrix of SVM algorithm: fp:0 fn:1, tp:101 
+At 4 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 229, fp:14 fn:23, tp:79
+when k is 5 :tn: 243, fp:0 fn:10, tp:92
+when k is 7 :tn: 241, fp:2 fn:6, tp:96
+when k is 9 :tn: 242, fp:1 fn:9, tp:93
+At 5 number of fold, tn: 242 on data set 1, the confusion matrix of Adaboost algorithm: fp:2 fn:1, tp:100  
+At 5 number of fold, tn: 243 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:1, tp:100 
+At 5 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 233, fp:11 fn:32, tp:69
+when k is 5 :tn: 241, fp:3 fn:20, tp:81
+when k is 7 :tn: 242, fp:2 fn:11, tp:90
+when k is 9 :tn: 243, fp:1 fn:20, tp:81
+
+The Adaboost training time on data set 1 is 7.028675 ms
+The total computation time of Adaboost classifier on data set 1 is 10.391760 ms
+The SVM training time on data set 1 is 101.242304 ms
+The total computation time of SVM classifier on data set 1 is 104.836512 ms
+The KNN classifier total computation time on data set 1 is 206.232166 ms
+Data Set 1 with the number of spilt is 6
+At 1 number of fold, tn: 193 on data set 1, the confusion matrix of Adaboost algorithm: fp:0 fn:0, tp:95  
+At 1 number of fold, tn: 193 on data set 1, the confusion matrix of SVM algorithm: fp:0 fn:0, tp:95 
+At 1 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 184, fp:9 fn:19, tp:76
+when k is 5 :tn: 192, fp:1 fn:13, tp:82
+when k is 7 :tn: 192, fp:1 fn:7, tp:88
+when k is 9 :tn: 192, fp:1 fn:10, tp:85
+At 2 number of fold, tn: 208 on data set 1, the confusion matrix of Adaboost algorithm: fp:2 fn:0, tp:78  
+At 2 number of fold, tn: 209 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:0, tp:78 
+At 2 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 199, fp:11 fn:20, tp:58
+when k is 5 :tn: 206, fp:4 fn:10, tp:68
+when k is 7 :tn: 208, fp:2 fn:6, tp:72
+when k is 9 :tn: 206, fp:4 fn:7, tp:71
+At 3 number of fold, tn: 209 on data set 1, the confusion matrix of Adaboost algorithm: fp:0 fn:1, tp:78  
+At 3 number of fold, tn: 208 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:0, tp:79 
+At 3 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 199, fp:10 fn:22, tp:57
+when k is 5 :tn: 208, fp:1 fn:15, tp:64
+when k is 7 :tn: 207, fp:2 fn:13, tp:66
+when k is 9 :tn: 206, fp:3 fn:18, tp:61
+At 4 number of fold, tn: 199 on data set 1, the confusion matrix of Adaboost algorithm: fp:0 fn:0, tp:89  
+At 4 number of fold, tn: 198 on data set 1, the confusion matrix of SVM algorithm: fp:1 fn:0, tp:89 
+At 4 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 186, fp:13 fn:33, tp:56
+when k is 5 :tn: 196, fp:3 fn:22, tp:67
+when k is 7 :tn: 198, fp:1 fn:10, tp:79
+when k is 9 :tn: 199, fp:0 fn:8, tp:81
+At 5 number of fold, tn: 194 on data set 1, the confusion matrix of Adaboost algorithm: fp:1 fn:1, tp:92  
+At 5 number of fold, tn: 195 on data set 1, the confusion matrix of SVM algorithm: fp:0 fn:1, tp:92 
+At 5 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 191, fp:4 fn:26, tp:67
+when k is 5 :tn: 193, fp:2 fn:22, tp:71
+when k is 7 :tn: 194, fp:1 fn:12, tp:81
+when k is 9 :tn: 195, fp:0 fn:22, tp:71
+At 6 number of fold, tn: 202 on data set 1, the confusion matrix of Adaboost algorithm: fp:2 fn:1, tp:83  
+At 6 number of fold, tn: 204 on data set 1, the confusion matrix of SVM algorithm: fp:0 fn:0, tp:84 
+At 6 number of fold on data set 1, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 198, fp:6 fn:20, tp:64
+when k is 5 :tn: 199, fp:5 fn:14, tp:70
+when k is 7 :tn: 200, fp:4 fn:10, tp:74
+when k is 9 :tn: 200, fp:4 fn:14, tp:70
+
+The Adaboost training time on data set 1 is 5.912622 ms
+The total computation time of Adaboost classifier on data set 1 is 8.347074 ms
+The SVM training time on data set 1 is 105.001092 ms
+The total computation time of SVM classifier on data set 1 is 108.025392 ms
+The KNN classifier total computation time on data set 1 is 191.925565 ms
+====Data Set 2====
+Data Set 2 with the number of spilt is 2
+At 1 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 228, fp:41 fn:33, tp:2435  
+At 1 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 243, fp:26 fn:116, tp:2352 
+At 1 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 197, fp:72 fn:46, tp:2422
+when k is 5 :tn: 175, fp:94 fn:38, tp:2430
+when k is 7 :tn: 172, fp:97 fn:35, tp:2433
+when k is 9 :tn: 167, fp:102 fn:37, tp:2431
+At 2 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 233, fp:58 fn:35, tp:2410  
+At 2 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 256, fp:35 fn:56, tp:2389 
+At 2 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 205, fp:86 fn:31, tp:2414
+when k is 5 :tn: 187, fp:104 fn:25, tp:2420
+when k is 7 :tn: 180, fp:111 fn:21, tp:2424
+when k is 9 :tn: 173, fp:118 fn:21, tp:2424
+
+The Adaboost training time on data set 2 is 187.480211 ms
+The total computation time on data set 2 is 202.633262 ms
+The SVM training time on data set 2 is 169.747949 ms
+The total computation time on data set 2 is 193.448901 ms
+The KNN classifier total computation time on data set 2 is 1354.298353 ms
+Data Set 2 with the number of spilt is 3
+At 1 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 161, fp:30 fn:20, tp:1614  
+At 1 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 179, fp:12 fn:60, tp:1574 
+At 1 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 134, fp:57 fn:29, tp:1605
+when k is 5 :tn: 121, fp:70 fn:21, tp:1613
+when k is 7 :tn: 111, fp:80 fn:19, tp:1615
+when k is 9 :tn: 108, fp:83 fn:16, tp:1618
+At 2 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 158, fp:35 fn:24, tp:1607  
+At 2 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 185, fp:8 fn:71, tp:1560 
+At 2 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 149, fp:44 fn:22, tp:1609
+when k is 5 :tn: 144, fp:49 fn:19, tp:1612
+when k is 7 :tn: 137, fp:56 fn:20, tp:1611
+when k is 9 :tn: 123, fp:70 fn:18, tp:1613
+At 3 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 149, fp:27 fn:17, tp:1631  
+At 3 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 158, fp:18 fn:74, tp:1574 
+At 3 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 132, fp:44 fn:29, tp:1619
+when k is 5 :tn: 128, fp:48 fn:24, tp:1624
+when k is 7 :tn: 122, fp:54 fn:19, tp:1629
+when k is 9 :tn: 110, fp:66 fn:22, tp:1626
+
+The Adaboost training time on data set 2 is 617.771943 ms
+The total computation time on data set 2 is 631.577571 ms
+The SVM training time on data set 2 is 230.308692 ms
+The total computation time on data set 2 is 249.187628 ms
+The KNN classifier total computation time on data set 2 is 907.062769 ms
+Data Set 2 with the number of spilt is 4
+At 1 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 117, fp:19 fn:20, tp:1213  
+At 1 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 124, fp:12 fn:59, tp:1174 
+At 1 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 100, fp:36 fn:20, tp:1213
+when k is 5 :tn: 99, fp:37 fn:15, tp:1218
+when k is 7 :tn: 97, fp:39 fn:13, tp:1220
+when k is 9 :tn: 96, fp:40 fn:16, tp:1217
+At 2 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 105, fp:30 fn:11, tp:1222  
+At 2 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 123, fp:12 fn:42, tp:1191 
+At 2 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 97, fp:38 fn:18, tp:1215
+when k is 5 :tn: 87, fp:48 fn:13, tp:1220
+when k is 7 :tn: 86, fp:49 fn:16, tp:1217
+when k is 9 :tn: 81, fp:54 fn:10, tp:1223
+At 3 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 109, fp:27 fn:20, tp:1212  
+At 3 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 126, fp:10 fn:56, tp:1176 
+At 3 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 104, fp:32 fn:17, tp:1215
+when k is 5 :tn: 102, fp:34 fn:13, tp:1219
+when k is 7 :tn: 99, fp:37 fn:13, tp:1219
+when k is 9 :tn: 98, fp:38 fn:11, tp:1221
+At 4 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 123, fp:30 fn:17, tp:1198  
+At 4 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 142, fp:11 fn:51, tp:1164 
+At 4 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 107, fp:46 fn:17, tp:1198
+when k is 5 :tn: 104, fp:49 fn:12, tp:1203
+when k is 7 :tn: 96, fp:57 fn:13, tp:1202
+when k is 9 :tn: 90, fp:63 fn:12, tp:1203
+
+The Adaboost training time on data set 2 is 857.396305 ms
+The total computation time on data set 2 is 870.078564 ms
+The SVM training time on data set 2 is 282.438695 ms
+The total computation time on data set 2 is 298.539460 ms
+The KNN classifier total computation time on data set 2 is 672.145426 ms
+Data Set 2 with the number of spilt is 5
+At 1 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 94, fp:31 fn:10, tp:960  
+At 1 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 113, fp:12 fn:24, tp:946 
+At 1 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 85, fp:40 fn:12, tp:958
+when k is 5 :tn: 82, fp:43 fn:9, tp:961
+when k is 7 :tn: 78, fp:47 fn:7, tp:963
+when k is 9 :tn: 76, fp:49 fn:5, tp:965
+At 2 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 92, fp:18 fn:17, tp:968  
+At 2 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 99, fp:11 fn:49, tp:936 
+At 2 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 83, fp:27 fn:14, tp:971
+when k is 5 :tn: 82, fp:28 fn:9, tp:976
+when k is 7 :tn: 78, fp:32 fn:6, tp:979
+when k is 9 :tn: 77, fp:33 fn:4, tp:981
+At 3 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 91, fp:20 fn:17, tp:967  
+At 3 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 105, fp:6 fn:40, tp:944 
+At 3 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 77, fp:34 fn:12, tp:972
+when k is 5 :tn: 77, fp:34 fn:12, tp:972
+when k is 7 :tn: 75, fp:36 fn:10, tp:974
+when k is 9 :tn: 74, fp:37 fn:10, tp:974
+At 4 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 67, fp:21 fn:16, tp:990  
+At 4 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 82, fp:6 fn:55, tp:951 
+At 4 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 71, fp:17 fn:24, tp:982
+when k is 5 :tn: 66, fp:22 fn:19, tp:987
+when k is 7 :tn: 66, fp:22 fn:23, tp:983
+when k is 9 :tn: 63, fp:25 fn:23, tp:983
+At 5 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 109, fp:17 fn:8, tp:960  
+At 5 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 119, fp:7 fn:42, tp:926 
+At 5 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 97, fp:29 fn:11, tp:957
+when k is 5 :tn: 94, fp:32 fn:9, tp:959
+when k is 7 :tn: 92, fp:34 fn:9, tp:959
+when k is 9 :tn: 85, fp:41 fn:8, tp:960
+
+The Adaboost training time on data set 2 is 199.040699 ms
+The total computation time on data set 2 is 209.352350 ms
+The SVM training time on data set 2 is 309.215164 ms
+The total computation time on data set 2 is 322.998905 ms
+The KNN classifier total computation time on data set 2 is 548.766279 ms
+Data Set 2 with the number of spilt is 6
+At 1 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 69, fp:17 fn:13, tp:814  
+At 1 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 78, fp:8 fn:38, tp:789 
+At 1 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 65, fp:21 fn:12, tp:815
+when k is 5 :tn: 62, fp:24 fn:12, tp:815
+when k is 7 :tn: 60, fp:26 fn:9, tp:818
+when k is 9 :tn: 56, fp:30 fn:11, tp:816
+At 2 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 75, fp:18 fn:14, tp:805  
+At 2 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 78, fp:15 fn:42, tp:777 
+At 2 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 67, fp:26 fn:9, tp:810
+when k is 5 :tn: 64, fp:29 fn:8, tp:811
+when k is 7 :tn: 63, fp:30 fn:7, tp:812
+when k is 9 :tn: 60, fp:33 fn:6, tp:813
+At 3 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 72, fp:12 fn:10, tp:818  
+At 3 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 80, fp:4 fn:36, tp:792 
+At 3 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 70, fp:14 fn:11, tp:817
+when k is 5 :tn: 69, fp:15 fn:8, tp:820
+when k is 7 :tn: 62, fp:22 fn:7, tp:821
+when k is 9 :tn: 63, fp:21 fn:9, tp:819
+At 4 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 67, fp:21 fn:10, tp:814  
+At 4 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 82, fp:6 fn:33, tp:791 
+At 4 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 62, fp:26 fn:13, tp:811
+when k is 5 :tn: 58, fp:30 fn:11, tp:813
+when k is 7 :tn: 58, fp:30 fn:11, tp:813
+when k is 9 :tn: 57, fp:31 fn:9, tp:815
+At 5 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 88, fp:12 fn:11, tp:801  
+At 5 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 89, fp:11 fn:38, tp:774 
+At 5 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 77, fp:23 fn:14, tp:798
+when k is 5 :tn: 71, fp:29 fn:13, tp:799
+when k is 7 :tn: 67, fp:33 fn:11, tp:801
+when k is 9 :tn: 68, fp:32 fn:11, tp:801
+At 6 number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: 85, fp:24 fn:7, tp:796  
+At 6 number of fold on data set 2, the confusion matrix of SVM algorithm:tn: 103, fp:6 fn:24, tp:779 
+At 6 number of fold on data set 2, the confusion matrix of KNN algorithm:
+when k is 3 :tn: 82, fp:27 fn:13, tp:790
+when k is 5 :tn: 80, fp:29 fn:10, tp:793
+when k is 7 :tn: 79, fp:30 fn:6, tp:797
+when k is 9 :tn: 76, fp:33 fn:5, tp:798
+
+The Adaboost training time on data set 2 is 1617.133498 ms
+The total computation time on data set 2 is 1629.330118 ms
+The SVM training time on data set 2 is 324.053764 ms
+The total computation time on data set 2 is 336.392681 ms
+The KNN classifier total computation time on data set 2 is 473.958333 ms
