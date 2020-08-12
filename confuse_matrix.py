@@ -65,13 +65,15 @@ def svm_call (x_train,y_train,x_test,y_test,n_components):
 ###############################################################################
 k=[3,5,7,9]
 def knn(x_train,y_train,x_test,y_test,k):
-    acc_list=[]
+    tf_list=[]
     for element in k:
+        task=[]
         knn = KNeighborsClassifier(n_neighbors=element)
         knn_pred = knn.fit(x_train,y_train)
-        acc=knn.score(x_test,y_test)
-        acc_list.append(acc)
-    return  acc_list
+        predit = knn.predict(x_test)
+        tn, fp, fn, tp = confusion_matrix(y_test, predit).ravel()
+        print("when k is %d :tn: %d, fp:%d fn:%d, tp:%d" %(element,tn, fp, fn, tp ))
+        
 
 #def knn(x_train,y_train,x_test,y_test,k):
 #    acc_list=[]
@@ -135,16 +137,17 @@ for i in range (2,7):
         n_components = attributes_1.shape[1]
         svm_1 = svm_call(x_1_train,y_1_train,x_1_test,y_1_test,n_components)
         t2 = time()
-        knn_1 = knn(x_1_train,y_1_train,x_1_test,y_1_test,k)
+        print ("At %d number of fold, tn: %d on data set 1, the confusion matrix of Adaboost algorithm: fp:%d fn:%d, tp:%d  " %(counter,ada_boost_1[0],ada_boost_1[1],ada_boost_1[2],ada_boost_1[3]))
+        print ("At %d number of fold, tn: %d on data set 1, the confusion matrix of SVM algorithm: fp:%d fn:%d, tp:%d " %(counter,svm_1[0],svm_1[1],svm_1[2],svm_1[3]))
+        print("At %d number of fold on data set 1, the confusion matrix of KNN algorithm:" %(counter))
         t3 = time()
-        print ("At %d number of fold, tn: %d, fp:%d fn:%d, tp:%d  " %(counter,ada_boost_1[0],ada_boost_1[1],ada_boost_1[2],ada_boost_1[3]))
-        print ("At %d number of fold, tn: %d, fp:%d fn:%d, tp:%d " %(counter,svm_1[0],svm_1[1],svm_1[2],svm_1[3]))
-        print("At %d number of fold, on data set 1 when the k value is %d, it has the hightest accuracy value %.2f%%" %(counter,k[knn_1.index(max(knn_1))], 100*max(knn_1)))
+        knn_1 = knn(x_1_train,y_1_train,x_1_test,y_1_test,k)
+        t4 = time()
         ada_train_t_avg = ada_train_t_avg + ada_boost_1[4]
         ada_total_t_avg = ada_total_t_avg + ada_boost_1[5]+t1-t0
         svc_train_t_avg = svc_train_t_avg + svm_1[4]
         svc_total_t_avg = svc_total_t_avg + svm_1[5] +t1-t0
-        knn_total_t_avg = svc_total_t_avg + t3-t2 +t1-t0
+        knn_total_t_avg = knn_total_t_avg + t4-t3 +t1-t0
     ada_train_t_avg = ada_train_t_avg / counter
     ada_total_t_avg = ada_total_t_avg / counter
     svc_train_t_avg = svc_train_t_avg / counter
@@ -154,7 +157,7 @@ for i in range (2,7):
     print("The total computation time of Adaboost classifier on data set 1 is %f ms" % (ada_total_t_avg*1000))
     print("The SVM training time on data set 1 is %f ms" % (svc_train_t_avg*1000))
     print("The total computation time of SVM classifier on data set 1 is %f ms" % (svc_total_t_avg*1000))
-    print("The KNN classifier total computation time on data set 2 is %f ms" % (knn_total_t_avg*1000))
+    print("The KNN classifier total computation time on data set 1 is %f ms" % (knn_total_t_avg*1000))
 
 
 print("====Data Set 2====")
@@ -181,23 +184,24 @@ for i in range (2,7):
         n_components = attributes_2.shape[1]
         svm_2 = svm_call(x_2_train,y_2_train,x_2_test,y_2_test,n_components)
         t2 = time()
-        knn_2 = knn(x_2_train,y_2_train,x_2_test,y_2_test,k)
+        print ("At %d number of fold on data set 2, the confusion matrix of Adaboost algorithm: tn: %d, fp:%d fn:%d, tp:%d  " %(counter,ada_boost_2[0],ada_boost_2[1],ada_boost_2[2],ada_boost_2[3]))
+        print ("At %d number of fold on data set 2, the confusion matrix of SVM algorithm:tn: %d, fp:%d fn:%d, tp:%d " %(counter,svm_2[0],svm_2[1],svm_2[2],svm_2[3]))
+        print("At %d number of fold on data set 2, the confusion matrix of KNN algorithm:" %(counter))
         t3 = time()
-        print ("At %d number of fold, tn: %d, fp:%d fn:%d, tp:%d  " %(counter,ada_boost_2[0],ada_boost_2[1],ada_boost_2[2],ada_boost_2[3]))
-        print ("At %d number of fold, tn: %d, fp:%d fn:%d, tp:%d " %(counter,svm_2[0],svm_2[1],svm_2[2],svm_2[3]))
-        print ("At %d number of fold, on data set 2 when the k value is %d, it has the hightest accuracy value %.2f%%" %(counter,k[knn_2.index(max(knn_2))], 100*max(knn_2)))
+        knn_2 = knn(x_2_train,y_2_train,x_2_test,y_2_test,k)
+        t4 = time()        
         ada_train_t_avg = ada_train_t_avg + ada_boost_2[4]+t1-t0
         ada_total_t_avg = ada_total_t_avg + ada_boost_2[5]+t1-t0
         svc_train_t_avg = svc_train_t_avg + svm_2[4]
         svc_total_t_avg = svc_total_t_avg + svm_2[5] +t1-t0         
-        knn_total_t_avg = svc_total_t_avg + t3-t2 +t1-t0
+        knn_total_t_avg = knn_total_t_avg + t4-t3 +t1-t0
     ada_train_t_avg = ada_train_t_avg / counter
     ada_total_t_avg = ada_total_t_avg / counter
     svc_train_t_avg = svc_train_t_avg / counter
     svc_total_t_avg = svc_total_t_avg / counter
     knn_total_t_avg = knn_total_t_avg / counter
-    print("\nThe Adaboost training time on data set 1 is %f ms" % (ada_train_t_avg*1000))
-    print("The total computation time on data set 1 is %f ms" % (ada_total_t_avg*1000))
+    print("\nThe Adaboost training time on data set 2 is %f ms" % (ada_train_t_avg*1000))
+    print("The total computation time on data set 2 is %f ms" % (ada_total_t_avg*1000))
     print("The SVM training time on data set 2 is %f ms" % (svc_train_t_avg*1000))
     print("The total computation time on data set 2 is %f ms" % (svc_total_t_avg*1000))
     print("The KNN classifier total computation time on data set 2 is %f ms" % (knn_total_t_avg*1000))

@@ -8,7 +8,7 @@ from sklearn. ensemble import AdaBoostClassifier
 from sklearn.decomposition import PCA
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import confusion_matrix
+
 
 ## file location is subject to change
 data_set_1    =  pd.read_csv(r'car_2class.data',header=0)
@@ -29,23 +29,22 @@ def accuracy(true_label, prediction):
     accuracy = np.sum(true_label == prediction) / len(true_label)
     return accuracy
 
-k=[3,5,7,9]
 def knn(x_train,y_train,x_test,y_test,k):
-    tf_list=[]
+    acc_list=[]
     for element in k:
-        task=[]
         knn = KNeighborsClassifier(n_neighbors=element)
         knn_pred = knn.fit(x_train,y_train)
-        #acc=knn.score(x_test,y_test)
-        #acc_list.append(acc)
-        predit = knn.predict(x_test)
-        tn, fp, fn, tp = confusion_matrix(y_test, predit).ravel()
-        print("when k is %d :tn: %d, fp:%d fn:%d, tp:%d" %(element,tn, fp, fn, tp ))
-   
+        acc=knn.score(x_test,y_test)
+        acc_list.append(acc)
+    return  acc_list
+
+
+
+    
 
   
 
-
+k=[3,5,7,9]
 
 #############################################################################################
 # first data set header info (reference)
@@ -77,11 +76,8 @@ for i in range (2,7):
       x_1_train, x_1_test = attributes_2[train_index], attributes_2[test_index]
       y_1_train, y_1_test = label_2[train_index], label_2[test_index]
       #print( x_1_test.shape)
-      print("At %d number of fold, the confusion matrix of KNN algorithm:" %(counter))
       knn_1 = knn(x_1_train,y_1_train,x_1_test,y_1_test,k)
-      #print("At %d number of fold,When the k value is %d, it has the hightest accuracy value %f" %(counter,k[knn_1.index(max(knn_1))], max(knn_1)))
-      
-      #print(knn_1)
+      print("At %d number of fold,When the k value is %d, it has the hightest accuracy value %f" %(counter,k[knn_1.index(max(knn_1))], max(knn_1)))
       #print(y_1_test.shape[1])
       #print("correct:", len(y_1_test)*knn_1)
       #print("error:", len(y_1_test)*(1-knn_1))
