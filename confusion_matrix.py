@@ -74,7 +74,7 @@ def knn(x_train,y_train,x_test,y_test,k):
         predit = knn.predict(x_test)
         tn, fp, fn, tp = confusion_matrix(y_test, predit).ravel()
         t1=time()
-        print("KNN k=%d: \t %d \t %d \t %d \t %d \t %.2f%% \t Total: %.2fms" %(element,tn, fp, fn, tp, ((tn+tp)/(tn+fp+fn+tp)*100), (t1-t0)*1000 ))
+        print("KNN k=%d \t %d \t %d \t %d \t %d \t %.2f%% \t Total: %.2fms" %(element,tn, fp, fn, tp, ((tn+tp)/(tn+fp+fn+tp)*100), (t1-t0)*1000 ))
         # print("KNN: k=%d: \t tn:%d fp:%d fn:%d tp:%d \t Accuracy: %.2f%% \t Total time:%.2fms" %(element,tn, fp, fn, tp, ((tn+tp)/(tn+fp+fn+tp)*100), (t1-t0)*1000 ))
 
 
@@ -138,7 +138,7 @@ for i in range (2,7):
         svm_1 = svm_call(x_1_train,y_1_train,x_1_test,y_1_test,n_components)
         t2 = time()
         print ("\n===Split: %d, Fold: %d ===" % (i, counter))
-        print ("[Algorithm] \t [TN] \t [FP] \t [FN] \t [TP] \t [Accuracy] \t -----[Time]-----")
+        print ("[Algorithm] \t [TN] \t [FP] \t [FN] \t [TP] \t [Accuracy] \t -----------------[Time]----------------")
         print ("Adaboost \t %d \t %d \t %d \t %d \t %.2f%% \t Training: %.2fms \t Testing: %.2fms" %(ada_boost_1[0],ada_boost_1[1],ada_boost_1[2],ada_boost_1[3],((ada_boost_1[0]+ada_boost_1[2])/(ada_boost_1[0]+ada_boost_1[1]+ada_boost_1[2]+ada_boost_1[3])*100), (ada_boost_1[4]*1000),(ada_boost_1[5]*1000)))
         print ("SVM \t \t %d \t %d \t %d \t %d \t %.2f%% \t Training: %.2fms \t Testing: %.2fms" %(svm_1[0],svm_1[1],svm_1[2],svm_1[3],((svm_1[0]+svm_1[3])/(svm_1[0]+svm_1[1]+svm_1[2]+svm_1[3])*100), (svm_1[4]*1000),(svm_1[5]*1000)))
         # print ("Adaboost: \t tn:%d fp:%d fn:%d tp:%d \t Accuracy: %.2f%% \t Training time: %.2fms \t Testing time: %.2fms" %(ada_boost_1[0],ada_boost_1[1],ada_boost_1[2],ada_boost_1[3],((ada_boost_1[0]+ada_boost_1[2])/(ada_boost_1[0]+ada_boost_1[1]+ada_boost_1[2]+ada_boost_1[3])*100), (ada_boost_1[4]*1000),(ada_boost_1[5]*1000)))
