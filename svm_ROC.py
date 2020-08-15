@@ -19,54 +19,6 @@ from sklearn.metrics import plot_roc_curve
 def accuracy(true_label, prediction):
     accuracy = np.sum(true_label == prediction) / len(true_label)
     return accuracy
-# define the KNN algorithm call:
-k=[3,5,7,9]
-def knn(x_train,y_train,x_test,y_test,k):
-    acc_list=[]
-    for element in k:
-        knn = KNeighborsClassifier(n_neighbors=element)
-        knn_pred = knn.fit(x_train,y_train)
-        acc=knn.score(x_test,y_test)
-        acc_list.append(acc)
-    return  acc_list
-# #############################################################################
-# Define the Adaboost classifier call fot the data sets need to be tested
-# return the acc value with training and testing time
-
-Ada_clf =   AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 15, learning_rate = 1)
-def ada_boost(x_train,y_train,x_test,y_test):
-    t0 = time()
-    #Ada_clf = AdaBoostClassifier(DecisionTreeClassifier(),n_estimators = 5, learning_rate = 1)
-    Ada_clf.fit(x_train, y_train)
-    t1 = time()
-    Ada_prediction = Ada_clf.predict(x_test)
-    acc = accuracy(y_test, Ada_prediction)
-    t2 = time()
-    trainT  =   t1-t0
-    runT    =   t2-t0
-    return acc, trainT, runT
-
-# #############################################################################
-# Define the SVM classifier call for the data sets
-# return the acc value with training and testing time
-# Compute a PCA (eigenvalues) on the dataset (treated as unlabeled
-# dataset): unsupervised feature extraction / dimensionality reduction
-
-def svm_call (x_train,y_train,x_test,y_test,n_components):
-    t0 = time()
-    pca = PCA(n_components=n_components, svd_solver='randomized',whiten=True).fit(x_train)
-    x_train_pca = pca.transform(x_train)
-    X_test_pca = pca.transform(x_test)
-    svc_clf = SVC(C=1000, class_weight='balanced', gamma=0.05)
-    svc_clf = svc_clf.fit(x_train_pca, y_train)
-    t1 = time()
-    svc_pred = svc_clf.predict(X_test_pca)
-    acc = accuracy(y_test,svc_pred)
-    t2 = time()
-    trainT  =   t1-t0
-    runT    =   t2-t0
-    return acc, trainT, runT
-
 
 ###############################################################################
 ## file location is subject to change
@@ -100,8 +52,15 @@ for i in range (2,7):
     for train_index, test_index in kf.split(attributes_1):
         x_1_train, x_1_test = attributes_1[train_index], attributes_1[test_index]
         y_1_train, y_1_test = label_1[train_index], label_1[test_index]
-        ada_boost_1 = ada_boost(x_1_train,y_1_train,x_1_test,y_1_test)
-        viz = plot_roc_curve(Ada_clf,x_1_test,y_1_test,name='ROC fold {}'.format(i),alpha=0.3, lw=1, ax=ax)
+        n_components = attributes_1.shape[1]
+        pca = PCA(n_components=n_components, svd_solver='randomized',whiten=True).fit(x_1_train)
+        x_train_pca = pca.transform(x_1_train)
+        X_test_pca = pca.transform(x_1_test)
+        svc_clf = SVC(C=1000, class_weight='balanced', gamma=0.05)
+        svc_clf = svc_clf.fit(x_train_pca, y_train)
+        svc_pred = svc_clf.predict(X_test_pca)
+        acc = accuracy(y_test,svc_pred)
+        viz = plot_roc_curve(svc_clf,x_1_test,y_1_test,name='ROC fold {}'.format(i),alpha=0.3, lw=1, ax=ax)
         interp_tpr = np.interp(mean_fpr, viz.fpr, viz.tpr)
         interp_tpr[0] = 0.0
         tprs.append(interp_tpr)
