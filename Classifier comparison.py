@@ -83,17 +83,6 @@ def svm_call (x_train,y_train,x_test,y_test,n_components):
     return acc, trainT, runT
 
 ###############################################################################
-k=[3,5,7,9]
-def knn(x_train,y_train,x_test,y_test,k):
-    acc_list=[]
-    for element in k:
-        knn = KNeighborsClassifier(n_neighbors=element)
-        knn_pred = knn.fit(x_train,y_train)
-        acc=knn.score(x_test,y_test)
-        acc_list.append(acc)
-    return  acc_list
-
-###############################################################################
 ## file location is subject to change
 data_set_1    =  pd.read_csv(r'car_2class.data',header=0)
 data_set_2    = np.loadtxt('/home/aaron/Desktop/page-blocks.txt')
@@ -101,6 +90,7 @@ data_set_2    = np.loadtxt('/home/aaron/Desktop/page-blocks.txt')
 ## File location for Jin
 #data_set_1 = pd.read_csv(r'car_2class.data',header=0)
 #data_set_2 = pd.DataFrame.to_numpy(pd.read_csv(r'heart_failure_clinical_records_dataset.csv',delimiter=',',header=0))
+
 
 #############################################################################################
 # first data set header info (reference)
@@ -121,9 +111,6 @@ attributes_1=   np.array(list(zip(buying,maint,door,persons,lug_boot,safety)))
 # second data set
 label_2     =   data_set_2[:,-1]
 attributes_2=   data_set_2[:,:-1]
-
-#############################################################################################
-#define the value of K for KNN algorithm
 
 
 print("====Data Set 1====")
