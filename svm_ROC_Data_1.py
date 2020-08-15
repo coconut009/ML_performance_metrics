@@ -35,20 +35,16 @@ tprs = []
 aucs = []
 mean_fpr = np.linspace(0, 1, 100)
 fig, ax = plt.subplots()
+random_state = np.random.RandomState(0)
+svc_clf = SVC(kernel='linear', probability=True,random_state=random_state)
 
 for i in range (2,7):
     kf = KFold(n_splits=i,shuffle=True)
     for train_index, test_index in kf.split(attributes):
         x_train, x_test = attributes[train_index], attributes[test_index]
         y_train, y_test = label[train_index], label[test_index] 
-        n_components = attributes.shape[1]
-        pca = PCA( n_components, svd_solver='randomized',whiten=True).fit(x_train)
-        x_train_pca = pca.transform(x_train)
-        x_test_pca = pca.transform(x_test)
-        svc_clf = SVC(C=1000, class_weight='balanced', gamma=0.05)
-        svc_clf = svc_clf.fit(x_train_pca, y_train)
-        svc_pred = svc_clf.predict(x_test_pca)        
-        viz = plot_roc_curve(svc_clf,x_test_pca,y_test,name='ROC @ fold {} times'.format(i),alpha=0.3, lw=1, ax=ax)
+        svc_clf = svc_clf.fit(x_train, y_train) 
+        viz = plot_roc_curve(svc_clf,x_test,y_test,name='ROC @ fold {} times'.format(i),alpha=0.8, lw=1, ax=ax)
         interp_tpr = np.interp(mean_fpr, viz.fpr, viz.tpr)
         interp_tpr[0] = 0.0
         tprs.append(interp_tpr)
@@ -73,7 +69,7 @@ ax.fill_between(mean_fpr, tprs_lower, tprs_upper, color='grey', alpha=.2,
                 label=r'$\pm$ 1 std. dev.')
 
 ax.set(xlim=[-0.05, 1.05], ylim=[-0.05, 1.05],
-       title="SVM Classifier ROC curve of Data Set 1")
+       title="SVM Classifier (Without PCA) ROC curve of Data Set 1")
 ax.legend(loc="lower right")
 plt.show() 
          
