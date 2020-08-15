@@ -70,7 +70,7 @@ def knn(x_train,y_train,x_test,y_test,k):
         t0=time()
         task=[]
         knn = KNeighborsClassifier(n_neighbors=element)
-        knn_pred = knn.fit(x_train,y_train)
+        knn = knn.fit(x_train,y_train)
         predit = knn.predict(x_test)
         tn, fp, fn, tp = confusion_matrix(y_test, predit).ravel()
         t1=time()
